@@ -209,3 +209,53 @@ footer p {
         grid-template-columns: 1fr;
     }
 }
+
+.developers-section {
+    text-align: center;
+}
+
+.developers-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.developer-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.developer-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.developer-card img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.developer-info h2 {
+    margin-bottom: 0.5rem;
+    color: #007bff;
+}
+
+.developer-info p {
+    color: #555;
+}
+
+.project-description {
+    margin-top: 2rem;
+    font-size: 1.1rem;
+    color: #666;
+}
