@@ -57,9 +57,9 @@ a:hover {
 /* Header Styles */
 header {
   background-color: #333;
-  padding: 0.3rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
 /* Navbar Design */
 .navbar {
   background-color: #333;
@@ -132,30 +132,56 @@ header {
   cursor: pointer;
 }
 
+/* For screens smaller than 768px */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
     flex-direction: column;
     width: 100%;
     background-color: #333;
+    position: absolute;
+    top: 50px;
+    left: 0;
   }
 
   .nav-links li {
     text-align: center;
+    border-bottom: 1px solid #444;
   }
 
   .nav-links li a {
     padding: 15px;
+    color: white;
   }
 
   .menu-toggle {
     display: block;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+  }
+
+  .menu-toggle.active + .nav-links {
+    display: flex;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+
+  .faculty-grid {
+    grid-template-columns: 1fr;
   }
 }
 
 .show {
   display: flex !important;
 }
+
 /* Hero Section Styles */
 .hero {
   height: 80vh;
@@ -170,12 +196,14 @@ header {
   overflow: hidden;
   margin-bottom: 2rem;
 }
+
 .hero-Text {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
 .hero-Text h1 {
   font-size: 4rem;
   margin-bottom: 1.5rem;
@@ -189,10 +217,12 @@ header {
   margin-bottom: 2.5rem;
   animation: fadeInUp 1s ease-in-out;
 }
+
 .button-container {
   display: flex;
   gap: 1.5rem;
 }
+
 .cta-button {
   background-color: #007bff;
   color: #fff;
@@ -208,16 +238,18 @@ header {
   background-color: #0056b3;
   transform: scale(1.05);
 }
+
 .hero-image {
   mix-blend-mode: multiply;
 }
 
-/* Accordian for the FAQ Section */
+/* Accordion for the FAQ Section */
 .feature {
   display: flex;
   flex-direction: column;
   gap: 2px;
 }
+
 .accordion {
   border-radius: 0.5rem;
   background-color: #d8d8d8;
@@ -244,6 +276,7 @@ header {
   overflow: hidden;
   transition: max-height 0.2s ease-out;
 }
+
 @keyframes fadeInDown {
   from {
     opacity: 0;
@@ -331,7 +364,6 @@ footer {
   text-align: center;
   padding: 1rem;
   margin-top: 2rem;
-  position: relative;
 }
 
 footer p {
@@ -339,25 +371,7 @@ footer p {
   font-size: 0.9rem;
 }
 
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-  .hero h1 {
-    font-size: 2.5rem;
-  }
-
-  .hero p {
-    font-size: 1.2rem;
-  }
-
-  nav ul {
-    flex-direction: column;
-  }
-
-  .faculty-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
+/* Developer Section */
 .developers-section {
   text-align: center;
 }
