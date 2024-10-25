@@ -50,21 +50,18 @@ a {
   transition: color 0.3s ease;
 }
 
-a:hover {
-  color: #0056b3;
-}
-
 /* Header Styles */
 header {
   background-color: #333;
+  padding: 0rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
 /* Navbar Design */
 .navbar {
   background-color: #333;
   color: white;
   padding: 15px 20px;
+
   font-family: sans-serif;
 }
 
@@ -99,89 +96,62 @@ header {
 .nav-links li a:hover {
   background-color: #575757;
 }
-
-/* Dropdown Styles */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #444;
-  min-width: 150px;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.dropdown-content li a {
-  padding: 10px 15px;
-  white-space: nowrap;
-}
-
-.dropdown-content li a:hover {
-  background-color: #575757;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-/* Responsive Styles */
 .menu-toggle {
   display: none;
-  font-size: 1.5rem;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
 }
 
 /* For screens smaller than 768px */
 @media (max-width: 768px) {
+  /* Hide the menu by default */
   .nav-links {
     display: none;
     flex-direction: column;
     width: 100%;
     background-color: #333;
-    position: absolute;
-    top: 50px;
+    position: absolute; /* Positioning the menu */
+    top: 50px; /* Adjust according to your header height */
     left: 0;
+    z-index: 1000; /* Ensure it sits on top of other elements */
   }
-
-  .nav-links li {
-    text-align: center;
-    border-bottom: 1px solid #444;
-  }
-
-  .nav-links li a {
-    padding: 15px;
-    color: white;
-  }
-
+  /* Show the menu toggle (hamburger icon) */
   .menu-toggle {
     display: block;
-    position: absolute;
-    top: 15px;
-    right: 20px;
+    cursor: pointer;
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    background-color: #333;
+    color: white;
+    z-index: 1001; /* Ensure it sits above the nav */
+  }
+  /* Menu items alignment */
+  .nav-links li {
+    text-align: center;
+    border-bottom: 1px solid #444; /* Add border to separate items */
+    width: 100%; /* Ensure full width */
   }
 
+  /* Link padding for better spacing */
+  .nav-links li a {
+    display: block;
+    padding: 15px;
+    color: white; /* Ensure text is visible on dark background */
+    text-decoration: none;
+    width: 100%; /* Ensure full-width clickable area */
+  }
+
+  /* When the menu toggle is active (menu open), display the menu */
   .menu-toggle.active + .nav-links {
-    display: flex;
+    display: flex; /* Show the menu */
   }
 
-  .hero h1 {
-    font-size: 2.5rem;
-  }
-
-  .hero p {
-    font-size: 1.2rem;
-  }
-
-  .faculty-grid {
-    grid-template-columns: 1fr;
+  /* Show class will display the nav */
+  .show {
+    display: flex !important;
   }
 }
-
-.show {
-  display: flex !important;
-}
-
 /* Hero Section Styles */
 .hero {
   height: 80vh;
@@ -196,14 +166,12 @@ header {
   overflow: hidden;
   margin-bottom: 2rem;
 }
-
 .hero-Text {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-
 .hero-Text h1 {
   font-size: 4rem;
   margin-bottom: 1.5rem;
@@ -217,12 +185,10 @@ header {
   margin-bottom: 2.5rem;
   animation: fadeInUp 1s ease-in-out;
 }
-
 .button-container {
   display: flex;
   gap: 1.5rem;
 }
-
 .cta-button {
   background-color: #007bff;
   color: #fff;
@@ -238,18 +204,16 @@ header {
   background-color: #0056b3;
   transform: scale(1.05);
 }
-
 .hero-image {
   mix-blend-mode: multiply;
 }
 
-/* Accordion for the FAQ Section */
+/* Accordian for the FAQ Section */
 .feature {
   display: flex;
   flex-direction: column;
   gap: 2px;
 }
-
 .accordion {
   border-radius: 0.5rem;
   background-color: #d8d8d8;
@@ -276,7 +240,6 @@ header {
   overflow: hidden;
   transition: max-height 0.2s ease-out;
 }
-
 @keyframes fadeInDown {
   from {
     opacity: 0;
@@ -332,7 +295,23 @@ h1 {
   transform: translateY(-10px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
+.faculty-card select {
+  margin-top: 10px;
+  padding: 8px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}
 
+.faculty-card select option {
+  padding: 8px;
+  color: #333;
+  background-color: #fff;
+}
 .faculty-card img {
   width: 100%;
   height: 220px;
@@ -356,7 +335,23 @@ h1 {
   font-size: 1rem;
   color: #666;
 }
-
+.book-btn {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  margin-top: 1rem;
+  border: 0;
+  font-family: sans-serif;
+  transition: all ease-in-out 0.3s;
+  font-size: 1rem;
+}
+.book-btn:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: rgba(235, 235, 235, 0.06);
+}
+.develop-container {
+  overflow-y: hidden;
+}
 /* Footer Styles */
 footer {
   background-color: #333;
@@ -364,6 +359,7 @@ footer {
   text-align: center;
   padding: 1rem;
   margin-top: 2rem;
+  position: relative;
 }
 
 footer p {
@@ -371,7 +367,55 @@ footer p {
   font-size: 0.9rem;
 }
 
-/* Developer Section */
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  .faculty-grid {
+    grid-template-columns: 1fr;
+  }
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+  .nav-links {
+    gap: 10px;
+  }
+  .navbar-container {
+    display: flex;
+    align-items: center;
+  }
+  .hero {
+    flex-direction: column-reverse;
+  }
+  .hero-image {
+    height: 200px;
+    width: 200px;
+  }
+  .cta-button {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .develop-container {
+    overflow-y: scroll;
+  }
+}
+
 .developers-section {
   text-align: center;
 }
